@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.sensiblemetrics.api</groupId>
+        <artifactId>roadmap-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../../</relativePath>
+    </parent>
+
+    <name>com.sensiblemetrics.api.roadmap.all</name>
+    <description>RoadMap All Bundle</description>
+    <artifactId>roadmap-all</artifactId>
+    <packaging>jar</packaging>
+    <url>https://github.com/AlexRogalskiy/roadmap/tree/master/modules/roadmap-all</url>
+    <inceptionYear>2020</inceptionYear>
+
+    <properties>
+        <sensiblemetrics.version>0.1.0-SNAPSHOT</sensiblemetrics.version>
+    </properties>
+
+    <dependencies>
+        <!-- SensibleMetrics library dependencies -->
+        <dependency>
+            <groupId>com.sensiblemetrics.api</groupId>
+            <artifactId>roadmap-commons</artifactId>
+            <version>${sensiblemetrics.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sensiblemetrics.api</groupId>
+            <artifactId>roadmap-router-service</artifactId>
+            <version>${sensiblemetrics.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

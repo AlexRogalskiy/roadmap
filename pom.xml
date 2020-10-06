@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sensiblemetrics.api</groupId>
+    <artifactId>roadmap-parent</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <name>com.sensiblemetrics.api.roadmap</name>
+    <description>Roadmap Parent POM</description>
+    <url>https://github.com/AlexRogalskiy/roadmap/</url>
+    <inceptionYear>2020</inceptionYear>
+
+    <organization>
+        <name>SensibleMetrics, Inc., Saint-Petersburg (RU)</name>
+        <url>https://www.sensible-metrics.com/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>The GNU General Public License, Version 3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+            <comments>GNU General Public License v3.0</comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>alexander.rogalskiy</id>
+            <name>Alexander Rogalskiy</name>
+            <email>alexander.rogalskiy@yandex.ru</email>
+            <url>http://github.com/AlexRogalskiy</url>
+            <organization>SensibleMetrics, Inc.</organization>
+            <organizationUrl>https://www.sensible-metrics.com/</organizationUrl>
+            <roles>
+                <role>developer</role>
+                <role>architect</role>
+            </roles>
+            <timezone>+3</timezone>
+            <properties>
+                <github>https://github.com/AlexRogalskiy</github>
+            </properties>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub Issue</system>
+        <url>https://github.com/AlexRogalskiy/roadmap/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>GitHub CI</system>
+        <url>https://github.com/AlexRogalskiy/roadmap/actions</url>
+        <notifiers>
+            <notifier>
+                <type>mail</type>
+                <sendOnError>true</sendOnError>
+                <sendOnFailure>true</sendOnFailure>
+                <sendOnSuccess>false</sendOnSuccess>
+                <sendOnWarning>false</sendOnWarning>
+                <configuration>
+                    <address>gitHub-actions@sensiblemetrics.com</address>
+                </configuration>
+            </notifier>
+        </notifiers>
+    </ciManagement>
+
+    <distributionManagement>
+        <site>
+            <id>GitHub</id>
+            <name>GitHub Distribution</name>
+            <url>scm:git:git@github.com/AlexRogalskiy/roadmap.git</url>
+        </site>
+    </distributionManagement>
+
+    <modules>
+        <module>modules/roadmap-all</module>
+        <module>modules/roadmap-commons</module>
+        <module>modules/roadmap-router-service</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <revision>0.1.0-SNAPSHOT</revision>
+
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss z</maven.build.timestamp.format>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.testSource>${java.version}</maven.compiler.testSource>
+        <maven.compiler.testTarget>${java.version}</maven.compiler.testTarget>
+        <maven.multiModuleProjectDirectory>./</maven.multiModuleProjectDirectory>
+        <maven.url>localhost</maven.url>
+        <maven.version>3.6.0</maven.version>
+
+        <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <compile-tests.skip>false</compile-tests.skip>
+        <enforce.java.skip>false</enforce.java.skip>
+        <enforce.maven.skip>false</enforce.maven.skip>
+        <enforce.plugin.skip>false</enforce.plugin.skip>
+        <excludeDevtools>true</excludeDevtools>
+        <failIfNoTests>false</failIfNoTests>
+        <skipTests>false</skipTests>
+        <package-tests.skip>true</package-tests.skip>
+        <copy-dependencies.skip>true</copy-dependencies.skip>
+
+        <assertj.version>3.17.2</assertj.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
+        <commons-compress.version>1.20</commons-compress.version>
+        <commons-validator.version>1.7</commons-validator.version>
+        <guava.version>29.0-jre</guava.version>
+        <hamcrest-matchers.version>2.0.0</hamcrest-matchers.version>
+        <hamcrest.version>2.2</hamcrest.version>
+
+        <jacoco-check.skip>false</jacoco-check.skip>
+        <jacoco-rule.line.length>100</jacoco-rule.line.length>
+        <jacoco.branches.coverage.percentage.minimum>0.65</jacoco.branches.coverage.percentage.minimum>
+        <jacoco.classes.missed.minimum>15</jacoco.classes.missed.minimum>
+        <jacoco.complexities.coverage.percentage.minimum>0.57</jacoco.complexities.coverage.percentage.minimum>
+        <jacoco.coverage.exclusions>**/application/config/*</jacoco.coverage.exclusions>
+        <jacoco.instructions.coverage.percentage.minimum>0.61</jacoco.instructions.coverage.percentage.minimum>
+        <jacoco.lines.coverage.percentage.minimum>0.65</jacoco.lines.coverage.percentage.minimum>
+        <jacoco.methods.coverage.percentage.minimum>0.57</jacoco.methods.coverage.percentage.minimum>
+
+        <java-hamcrest.version>2.0.0.0</java-hamcrest.version>
+        <junit-jupiter.version>5.7.0</junit-jupiter.version>
+        <junit-platform.version>1.7.0</junit-platform.version>
+        <junit-quickcheck.version>0.9.1</junit-quickcheck.version>
+
+        <logback.version>1.2.3</logback.version>
+        <logback-contrib.version>0.1.5</logback-contrib.version>
+        <logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
+
+        <lombok.version>1.18.12</lombok.version>
+
+        <mockito-helpers.version>2.0.0</mockito-helpers.version>
+        <mockito-junit-jupiter.version>3.5.13</mockito-junit-jupiter.version>
+        <mockito.version>3.5.13</mockito.version>
+
+        <throwing-function.version>1.5.1</throwing-function.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:git@github.com/AlexRogalskiy/roadmap.git
+        </connection>
+        <developerConnection>
+            scm:git:git@github.com:/AlexRogalskiy/roadmap.git
+        </developerConnection>
+        <url>
+            git://github.com/AlexRogalskiy/roadmap
+        </url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Logback library dependencies -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback.contrib</groupId>
+            <artifactId>logback-json-classic</artifactId>
+            <version>${logback-contrib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback.contrib</groupId>
+            <artifactId>logback-jackson</artifactId>
+            <version>${logback-contrib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash-logback-encoder.version}</version>
+        </dependency>
+
+        <!-- Guava library dependencies -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- Throwing functions library dependencies -->
+        <dependency>
+            <groupId>com.pivovarit</groupId>
+            <artifactId>throwing-function</artifactId>
+            <version>${throwing-function.version}</version>
+        </dependency>
+
+        <!-- Apache commons library dependencies -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>${commons-compress.version}</version>
+        </dependency>
+
+        <!-- Lombok library dependencies -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Commons validator library dependencies -->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${commons-validator.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- AssertJ test library dependencies -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Hamcrest test library dependencies -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>java-hamcrest</artifactId>
+            <version>${java-hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>it.ozimov</groupId>
+            <artifactId>hamcrest-matchers</artifactId>
+            <version>${hamcrest-matchers.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-validator</groupId>
+                    <artifactId>commons-validator</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- JUnit test library dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-migrationsupport</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-console</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Mockito test library dependencies -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito-junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>it.ozimov</groupId>
+            <artifactId>mockito-helpers</artifactId>
+            <version>${mockito-helpers.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <directory>${maven.multiModuleProjectDirectory}/.build/bin/${project.name}</directory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>clean-generated-sources</id>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <phase>clean</phase>
+                        <configuration>
+                            <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                            <filesets>
+                                <fileset>
+                                    <directory>${java.io.tmpdir}</directory>
+                                    <directory>${project.basedir}/src/main/generated-sources</directory>
+                                    <followSymlinks>false</followSymlinks>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <excludeArtifactIds>spring-boot-devtools</excludeArtifactIds>
+                    <outputDirectory>${project.build.directory}/lib/</outputDirectory>
+                    <includeScope>runtime</includeScope>
+                    <overWriteReleases>false</overWriteReleases>
+                    <overWriteSnapshots>false</overWriteSnapshots>
+                    <overWriteIfNewer>true</overWriteIfNewer>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>analyze</id>
+                        <goals>
+                            <goal>analyze-only</goal>
+                        </goals>
+                        <configuration>
+                            <failOnWarning>false</failOnWarning>
+                            <ignoreNonCompile>true</ignoreNonCompile>
+                            <outputXML>true</outputXML>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${copy-dependencies.skip}</skip>
+                        </configuration>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${enforce.maven.skip}</skip>
+                            <rules>
+                                <requireMavenVersion>
+                                    <message>You are running an older version of Maven (requires at least Maven
+                                        ${maven.version})
+                                    </message>
+                                    <version>${maven.version}</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-java</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${enforce.java.skip}</skip>
+                            <rules>
+                                <requireJavaVersion>
+                                    <message>You are running an older version of Java (requires at least JDK
+                                        ${java.version})
+                                    </message>
+                                    <version>[${java.version},)</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-plugin</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${enforce.plugin.skip}</skip>
+                            <rules>
+                                <requirePluginVersions>
+                                    <message>You are running plugins with empty plugin versions</message>
+                                    <banLatest>true</banLatest>
+                                    <banRelease>true</banRelease>
+                                    <banSnapshots>true</banSnapshots>
+                                </requirePluginVersions>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-help-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>show-profiles</id>
+                        <goals>
+                            <goal>active-profiles</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <addMavenDescriptor>true</addMavenDescriptor>
+                        <compress>true</compress>
+                        <manifest>
+                            <packageName>${project.groupId}</packageName>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            <addClasspath>true</addClasspath>
+                            <classpathLayoutType>custom</classpathLayoutType>
+                            <customClasspathLayout>${project.artifactId}.${project.version}</customClasspathLayout>
+                        </manifest>
+                        <manifestEntries>
+                            <Contains-Sources>java,class</Contains-Sources>
+                            <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                            <Implementation-Title>${project.description}</Implementation-Title>
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                            <Implementation-Build>${project.build.finalName}</Implementation-Build>
+                            <Specification-Title>${project.description}</Specification-Title>
+                            <Specification-Version>${project.version}</Specification-Version>
+                            <Bundle-License>${project.organization.name}</Bundle-License>
+                            <X-Builder>Maven ${maven.version}</X-Builder>
+                            <X-Build-Time>${maven.build.timestamp}</X-Build-Time>
+                            <X-Build-Os>${os.name}</X-Build-Os>
+                        </manifestEntries>
+                    </archive>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${package-tests.skip}</skip>
+                            <skipIfEmpty>true</skipIfEmpty>
+                            <includes>
+                                <include>**/common/</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <encoding>${project.build.outputEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>show-plugin-versions</id>
+                        <goals>
+                            <goal>display-dependency-updates</goal>
+                            <goal>display-plugin-updates</goal>
+                        </goals>
+                        <phase>site</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.6</version>
+                <configuration>
+                    <append>true</append>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default-jacoco-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${jacoco-check.skip}</skip>
+                            <rules>
+                                <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>INSTRUCTION</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco.instructions.coverage.percentage.minimum}</minimum>
+                                        </limit>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>CLASS</counter>
+                                            <value>MISSEDCOUNT</value>
+                                            <maximum>${jacoco.classes.missed.minimum}</maximum>
+                                        </limit>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco.lines.coverage.percentage.minimum}</minimum>
+                                        </limit>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>BRANCH</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco.branches.coverage.percentage.minimum}</minimum>
+                                        </limit>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>COMPLEXITY</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco.complexities.coverage.percentage.minimum}</minimum>
+                                        </limit>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>METHOD</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>${jacoco.methods.coverage.percentage.minimum}</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <outputDirectory>${project.build.directory}/release</outputDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changes-plugin</artifactId>
+                <version>2.12.1</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>changes-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.6.0</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>modules</report>
+                            <report>dependencies</report>
+                            <report>dependency-info</report>
+                            <report>mailing-lists</report>
+                            <report>dependency-convergence</report>
+                            <report>distribution-management</report>
+                            <report>dependency-management</report>
+                            <report>plugin-management</report>
+                            <report>issue-management</report>
+                            <report>ci-management</report>
+                            <report>licenses</report>
+                            <report>plugins</report>
+                            <report>summary</report>
+                            <report>team</report>
+                            <report>scm</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <id>central-1</id>
+            <name>Central Repository</name>
+            <url>https://repo1.maven.org/maven2</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <releases>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo1.maven.org/maven2</url>
+            <layout>default</layout>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <profiles>
+        <!-- Compile with debug profile -->
+        <profile>
+            <id>compile-with-debug</id>
+            <properties>
+                <maven.compiler.debug>true</maven.compiler.debug>
+                <maven.compiler.debuglevel>lines,vars,source</maven.compiler.debuglevel>
+                <maven.compiler.verbose>true</maven.compiler.verbose>
+            </properties>
+        </profile>
+
+        <!-- Unit tests with code coverage profile -->
+        <profile>
+            <id>unit-test</id>
+            <properties>
+                <parallel.tests>2</parallel.tests>
+                <test-groups.include/>
+
+                <surefire.commands>
+                    -Duser.language=en
+                    -Duser.country=GB
+                    --add-exports java.base/jdk.internal.ref=ALL-UNNAMED
+                    --illegal-access=permit
+                    --enable-preview
+                </surefire.commands>
+                <surefire.fileEncoding>-Dfile.encoding=${project.build.sourceEncoding}</surefire.fileEncoding>
+                <surefire.jmxEnabled>-Dcom.sun.management.jmxremote=false</surefire.jmxEnabled>
+                <surefire.memory>
+                    -Xmx1024m
+                    -Dsun.zip.disableMemoryMapping=true
+                </surefire.memory>
+                <surefire.stackVersion>-Djava.net.preferIPv4Stack=true</surefire.stackVersion>
+                <surefire.timezone>-Duser.timezone=US/Eastern</surefire.timezone>
+
+                <unit-tests.fail>${failIfNoTests}</unit-tests.fail>
+                <unit-tests.skip>${skipTests}</unit-tests.skip>
+            </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>${maven-surefire-plugin.version}</version>
+                            <configuration>
+                                <disableXmlReport>true</disableXmlReport>
+                                <skipTests>${unit-tests.skip}</skipTests>
+                                <groups>${test-groups.include}</groups>
+                                <reportFormat>plain</reportFormat>
+                                <testFailureIgnore>false</testFailureIgnore>
+                                <useSystemClassLoader>false</useSystemClassLoader>
+                                <printSummary>true</printSummary>
+                                <useFile>false</useFile>
+                                <forkedProcessTimeoutInSeconds>21600</forkedProcessTimeoutInSeconds>
+                                <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                                <failIfNoTests>${unit-tests.fail}</failIfNoTests>
+                                <argLine>
+                                    ${surefire.memory}
+                                    ${surefire.fileEncoding}
+                                    ${surefire.jmxEnabled}
+                                    ${surefire.stackVersion}
+                                    ${surefire.timezone}
+                                    ${surefire.commands}
+                                </argLine>
+                                <includes>
+                                    <include/>
+                                </includes>
+                                <properties>
+                                    <systemPropertyVariables>
+                                        <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+                                        <allure.results.directory>${project.build.directory}/allure-results
+                                        </allure.results.directory>
+                                        <java.awt.headless>true</java.awt.headless>
+                                    </systemPropertyVariables>
+                                </properties>
+                            </configuration>
+                        </plugin>
+
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-report-plugin</artifactId>
+                            <version>${maven-surefire-report-plugin.version}</version>
+                            <configuration>
+                                <showSuccess>false</showSuccess>
+                            </configuration>
+                        </plugin>
+
+                        <plugin>
+                            <groupId>org.jacoco</groupId>
+                            <artifactId>jacoco-maven-plugin</artifactId>
+                            <version>${maven-jacoco-plugin.version}</version>
+                            <configuration>
+                                <excludes>
+                                    <exclude>${jacoco.coverage.exclusions}</exclude>
+                                </excludes>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>before-tests</id>
+                                    <goals>
+                                        <goal>prepare-agent</goal>
+                                    </goals>
+                                    <phase>process-test-classes</phase>
+                                    <configuration>
+                                        <skip>${unit-tests.skip}</skip>
+                                        <!-- Sets the path to the file which contains the execution data. -->
+                                        <destFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</destFile>
+                                        <!--
+                                            Sets the name of the property containing the settings
+                                            for JaCoCo runtime agent.
+                                        -->
+                                        <propertyName>surefireArgLine</propertyName>
+                                    </configuration>
+                                </execution>
+                                <execution>
+                                    <id>after-tests</id>
+                                    <goals>
+                                        <goal>report</goal>
+                                    </goals>
+                                    <phase>test</phase>
+                                    <configuration>
+                                        <skip>${unit-tests.skip}</skip>
+                                        <!-- Sets the path to the file which contains the execution data. -->
+                                        <dataFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</dataFile>
+                                        <!-- Sets the output directory for the code coverage report. -->
+                                        <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut
+                                        </outputDirectory>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+
+                <!-- Use in lifecycle -->
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- JDK 8 and minor versions -->
+        <profile>
+            <id>non_module_java</id>
+            <activation>
+                <jdk>(,8]</jdk>
+            </activation>
+            <properties>
+                <compilerArgs>
+                    -XDignore.symbol.file
+                    -Xlint:all
+                </compilerArgs>
+                <java.version>8</java.version>
+                <asm.version>9.0</asm.version>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.8.1</version>
+                        <configuration>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                    <version>${lombok.version}</version>
+                                </path>
+                            </annotationProcessorPaths>
+                            <executable>true</executable>
+                            <showDeprecation>true</showDeprecation>
+                            <debug>true</debug>
+                            <debuglevel>lines,vars,source</debuglevel>
+                            <optimize>false</optimize>
+                            <verbose>false</verbose>
+
+                            <source>${maven.compiler.source}</source>
+                            <target>${maven.compiler.target}</target>
+                            <encoding>${project.build.outputEncoding}</encoding>
+                            <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.ow2.asm</groupId>
+                                <artifactId>asm</artifactId>
+                                <version>${asm.version}</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <id>default-testCompile</id>
+                                <goals>
+                                    <goal>testCompile</goal>
+                                </goals>
+                                <phase>test-compile</phase>
+                                <configuration>
+                                    <skip>${compile-tests.skip}</skip>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- JDK 11 and major versions -->
+        <profile>
+            <id>module_java</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <properties>
+                <compilerArgs>
+                    -XX:-OmitStackTraceInFastThrow
+                    --illegal-access=permit
+                    --enable-preview
+                </compilerArgs>
+                <java.version>11</java.version>
+                <asm.version>9.0</asm.version>
+            </properties>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.8.1</version>
+                        <configuration>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                    <version>${lombok.version}</version>
+                                </path>
+                            </annotationProcessorPaths>
+
+                            <executable>true</executable>
+                            <showDeprecation>true</showDeprecation>
+                            <debug>true</debug>
+                            <debuglevel>lines,vars,source</debuglevel>
+                            <optimize>false</optimize>
+                            <verbose>false</verbose>
+                            <forceJavacCompilerUse>true</forceJavacCompilerUse>
+
+                            <compilerVersion>${java.version}</compilerVersion>
+                            <release>${java.version}</release>
+                            <source>${maven.compiler.source}</source>
+                            <target>${maven.compiler.target}</target>
+                            <encoding>${project.build.outputEncoding}</encoding>
+
+                            <meminitial>128m</meminitial>
+                            <maxmem>512m</maxmem>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.ow2.asm</groupId>
+                                <artifactId>asm</artifactId>
+                                <version>${asm.version}</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <id>default-compile</id>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                                <phase>compile</phase>
+                            </execution>
+                            <execution>
+                                <id>default-testCompile</id>
+                                <goals>
+                                    <goal>testCompile</goal>
+                                </goals>
+                                <phase>test-compile</phase>
+                                <configuration>
+                                    <skip>${compile-tests.skip}</skip>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Test-jar profile -->
+        <profile>
+            <id>test-jar</id>
+            <properties>
+                <package-tests.skip>false</package-tests.skip>
+            </properties>
+        </profile>
+
+        <!-- Dev profile -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <enforce.java.skip>true</enforce.java.skip>
+                <enforce.maven.skip>true</enforce.maven.skip>
+                <enforce.plugin.skip>true</enforce.plugin.skip>
+                <excludeDevtools>false</excludeDevtools>
+                <logback.loglevel>DEBUG</logback.loglevel>
+            </properties>
+        </profile>
+
+        <!-- Test profile -->
+        <profile>
+            <id>test</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/src/test</exists>
+                </file>
+            </activation>
+            <properties>
+                <failsafe.memory>-Xms1g -Xmx1500m -Xss256k</failsafe.memory>
+                <integration-tests.skip>false</integration-tests.skip>
+                <surefire.jmxEnabled>-Dcom.sun.management.jmxremote=true</surefire.jmxEnabled>
+                <surefire.memory>-Xmx1024m</surefire.memory>
+                <surefire.stackVersion>-Djava.net.preferIPv4Stack=true</surefire.stackVersion>
+                <unit-tests.skip>false</unit-tests.skip>
+            </properties>
+        </profile>
+    </profiles>
+</project>

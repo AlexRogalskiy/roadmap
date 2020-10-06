@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.sensiblemetrics.api</groupId>
+        <artifactId>roadmap-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../../</relativePath>
+    </parent>
+
+    <name>com.sensiblemetrics.api.roadmap.router.service</name>
+    <description>RoadMap Router Service API</description>
+    <artifactId>roadmap-router-service</artifactId>
+    <packaging>jar</packaging>
+    <url>https://github.com/AlexRogalskiy/roadmap/tree/master/modules/roadmap-router-service</url>
+    <inceptionYear>2020</inceptionYear>
+
+    <properties>
+        <sensiblemetrics.version>0.1.0-SNAPSHOT</sensiblemetrics.version>
+
+        <validation-api.version>2.0.1.Final</validation-api.version>
+    </properties>
+
+    <dependencies>
+        <!-- SensibleMetrics library dependencies -->
+        <dependency>
+            <groupId>com.sensiblemetrics.api</groupId>
+            <artifactId>roadmap-commons</artifactId>
+            <version>${sensiblemetrics.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Validation library dependencies -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+        </dependency>
+
+        <!-- SensibleMetrics test library dependencies -->
+        <dependency>
+            <groupId>com.sensiblemetrics.api</groupId>
+            <artifactId>roadmap-commons</artifactId>
+            <version>${sensiblemetrics.version}</version>
+            <classifier>tests</classifier>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+        <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>${project.basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <filtering>true</filtering>
+                <directory>${project.basedir}/src/test/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
+
+    <profiles>
+        <!-- Uber jar profile -->
+        <profile>
+            <id>uber-jar</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-shade-plugin</artifactId>
+                            <version>${maven-shade-plugin.version}</version>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-shade-plugin</artifactId>
+                        <version>3.2.4</version>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>shaded</shadedClassifierName>
+                            <minimizeJar>true</minimizeJar>
+                            <outputFile>${project.build.directory}/maven-shade/reduced-pom.zip</outputFile>
+
+                            <artifactSet>
+                                <excludes>
+                                    <exclude>module-info.java</exclude>
+                                </excludes>
+                            </artifactSet>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>shade</goal>
+                                </goals>
+                                <phase>package</phase>
+                                <configuration>
+                                    <transformers>
+                                        <transformer
+                                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                            <manifestEntries>
+                                                <Implementation-Version>${project.version}</Implementation-Version>
+                                            </manifestEntries>
+                                        </transformer>
+                                    </transformers>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
