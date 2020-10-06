@@ -1,4 +1,4 @@
-package com.sensiblemetrics.api.roadmap.router.service.model.domain;
+package com.sensiblemetrics.api.roadmap.router.service.model.dto;
 
 import com.sensiblemetrics.api.roadmap.router.service.enumeration.StatusType;
 import lombok.Builder;

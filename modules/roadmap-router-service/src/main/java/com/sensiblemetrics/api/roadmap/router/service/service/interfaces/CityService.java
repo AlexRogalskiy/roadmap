@@ -1,4 +1,4 @@
-package com.sensiblemetrics.api.roadmap.router.service.service;
+package com.sensiblemetrics.api.roadmap.router.service.service.interfaces;
 
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.City;
 

@@ -1,7 +1,8 @@
-package com.sensiblemetrics.api.roadmap.router.service.repository;
+package com.sensiblemetrics.api.roadmap.router.service.repository.impl;
 
 import com.sensiblemetrics.api.roadmap.commons.executor.QueueingThreadPoolExecutor;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.Road;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.RoadRepository;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
 
 import java.util.Collections;

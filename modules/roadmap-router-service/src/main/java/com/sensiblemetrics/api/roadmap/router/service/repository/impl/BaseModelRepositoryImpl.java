@@ -1,7 +1,8 @@
-package com.sensiblemetrics.api.roadmap.router.service.repository;
+package com.sensiblemetrics.api.roadmap.router.service.repository.impl;
 
 import com.sensiblemetrics.api.roadmap.commons.executor.QueueingThreadPoolExecutor;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.BaseModelRepository;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
 import lombok.RequiredArgsConstructor;
 

@@ -1,8 +1,9 @@
-package com.sensiblemetrics.api.roadmap.router.service.repository;
+package com.sensiblemetrics.api.roadmap.router.service.repository.impl;
 
 import com.sensiblemetrics.api.roadmap.commons.exception.ResourceAlreadyExistException;
 import com.sensiblemetrics.api.roadmap.commons.executor.QueueingThreadPoolExecutor;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.City;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.CityRepository;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
 import org.apache.commons.compress.utils.Lists;
 

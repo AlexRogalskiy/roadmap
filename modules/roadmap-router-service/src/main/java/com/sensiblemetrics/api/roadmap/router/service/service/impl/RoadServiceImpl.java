@@ -1,7 +1,8 @@
-package com.sensiblemetrics.api.roadmap.router.service.service;
+package com.sensiblemetrics.api.roadmap.router.service.service.impl;
 
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.Road;
-import com.sensiblemetrics.api.roadmap.router.service.repository.RoadRepository;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.RoadRepository;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;

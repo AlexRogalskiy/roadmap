@@ -1,9 +1,11 @@
-package com.sensiblemetrics.api.roadmap.router.service.service;
+package com.sensiblemetrics.api.roadmap.router.service.service.impl;
 
 import com.sensiblemetrics.api.roadmap.commons.exception.InvalidParameterException;
 import com.sensiblemetrics.api.roadmap.commons.exception.ResourceNotFoundException;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
-import com.sensiblemetrics.api.roadmap.router.service.repository.BaseModelRepository;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.BaseModelRepository;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.BaseModelService;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RepositoryAware;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;

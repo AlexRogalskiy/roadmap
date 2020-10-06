@@ -1,9 +1,10 @@
-package com.sensiblemetrics.api.roadmap.router.service.controller;
+package com.sensiblemetrics.api.roadmap.router.service.controller.impl;
 
 import com.google.common.collect.Iterables;
-import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
+import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.RoadController;
+import com.sensiblemetrics.api.roadmap.router.service.model.dto.Response;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.Road;
-import com.sensiblemetrics.api.roadmap.router.service.service.RoadService;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

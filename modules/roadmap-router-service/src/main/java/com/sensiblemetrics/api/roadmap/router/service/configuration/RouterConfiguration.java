@@ -1,18 +1,18 @@
 package com.sensiblemetrics.api.roadmap.router.service.configuration;
 
 import com.sensiblemetrics.api.roadmap.commons.executor.QueueingThreadPoolExecutor;
-import com.sensiblemetrics.api.roadmap.router.service.controller.CityController;
-import com.sensiblemetrics.api.roadmap.router.service.controller.CityControllerImpl;
-import com.sensiblemetrics.api.roadmap.router.service.controller.RoadController;
-import com.sensiblemetrics.api.roadmap.router.service.controller.RoadControllerImpl;
-import com.sensiblemetrics.api.roadmap.router.service.repository.CityRepository;
-import com.sensiblemetrics.api.roadmap.router.service.repository.CityRepositoryImpl;
-import com.sensiblemetrics.api.roadmap.router.service.repository.RoadRepository;
-import com.sensiblemetrics.api.roadmap.router.service.repository.RoadRepositoryImpl;
-import com.sensiblemetrics.api.roadmap.router.service.service.CityService;
-import com.sensiblemetrics.api.roadmap.router.service.service.CityServiceImpl;
-import com.sensiblemetrics.api.roadmap.router.service.service.RoadService;
-import com.sensiblemetrics.api.roadmap.router.service.service.RoadServiceImpl;
+import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.CityController;
+import com.sensiblemetrics.api.roadmap.router.service.controller.impl.CityControllerImpl;
+import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.RoadController;
+import com.sensiblemetrics.api.roadmap.router.service.controller.impl.RoadControllerImpl;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.CityRepository;
+import com.sensiblemetrics.api.roadmap.router.service.repository.impl.CityRepositoryImpl;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.RoadRepository;
+import com.sensiblemetrics.api.roadmap.router.service.repository.impl.RoadRepositoryImpl;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.CityService;
+import com.sensiblemetrics.api.roadmap.router.service.service.impl.CityServiceImpl;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadService;
+import com.sensiblemetrics.api.roadmap.router.service.service.impl.RoadServiceImpl;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
 import lombok.extern.slf4j.Slf4j;
 

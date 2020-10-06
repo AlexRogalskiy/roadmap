@@ -1,6 +1,6 @@
-package com.sensiblemetrics.api.roadmap.router.service.controller;
+package com.sensiblemetrics.api.roadmap.router.service.controller.interfaces;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
+import com.sensiblemetrics.api.roadmap.router.service.model.dto.Response;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
 
 import java.io.Serializable;

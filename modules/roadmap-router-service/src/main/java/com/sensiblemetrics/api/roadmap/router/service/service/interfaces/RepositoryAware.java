@@ -1,7 +1,7 @@
-package com.sensiblemetrics.api.roadmap.router.service.service;
+package com.sensiblemetrics.api.roadmap.router.service.service.interfaces;
 
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
-import com.sensiblemetrics.api.roadmap.router.service.repository.BaseModelRepository;
+import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.BaseModelRepository;
 
 import java.io.Serializable;
 

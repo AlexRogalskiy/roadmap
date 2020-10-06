@@ -1,8 +1,9 @@
-package com.sensiblemetrics.api.roadmap.router.service.controller;
+package com.sensiblemetrics.api.roadmap.router.service.controller.impl;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
+import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.CityController;
+import com.sensiblemetrics.api.roadmap.router.service.model.dto.Response;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.City;
-import com.sensiblemetrics.api.roadmap.router.service.service.CityService;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.CityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
