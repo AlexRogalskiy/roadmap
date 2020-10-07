@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 import java.util.function.BiConsumer;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -185,5 +186,16 @@ public class ServiceUtils {
      */
     private static <T> Optional<T> cast(final Object value, final Class<T> clazz) {
         return Optional.ofNullable(clazz).filter(c -> c.isInstance(value)).map(c -> c.cast(value));
+    }
+
+    /**
+     * Returns {@link Predicate} by {@code not} operator
+     *
+     * @param <T>       type of predicate value
+     * @param predicate - initial input {@link Predicate} to be negated
+     * @return negated {@link Predicate}
+     */
+    public static <T> Predicate<T> not(final Predicate<T> predicate) {
+        return predicate.negate();
     }
 }

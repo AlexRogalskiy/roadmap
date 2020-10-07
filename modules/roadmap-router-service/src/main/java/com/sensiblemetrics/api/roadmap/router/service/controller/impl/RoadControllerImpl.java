@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Optional;
 import java.util.UUID;
 
-import static java.util.function.Predicate.not;
+import static com.sensiblemetrics.api.roadmap.commons.utils.ServiceUtils.not;
 
 /**
  * {@link Road} base model controller implementation

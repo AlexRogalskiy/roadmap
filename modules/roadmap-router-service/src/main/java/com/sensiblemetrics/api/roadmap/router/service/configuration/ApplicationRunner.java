@@ -39,6 +39,5 @@ public class ApplicationRunner extends Thread {
     @Override
     public void start() {
         log.info("Starting application runner...");
-
     }
 }
