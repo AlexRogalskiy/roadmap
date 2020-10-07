@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import java.util.Optional;
 import java.util.UUID;
 
-import static com.sensiblemetrics.api.roadmap.commons.utils.ServiceUtils.DEFAULT_COMPLETABLE_LOG_ACTION;
+import static com.sensiblemetrics.api.roadmap.commons.utils.FutureUtils.DEFAULT_COMPLETABLE_LOG_ACTION;
 
 /**
  * {@link CityEntity} base model service implementation
