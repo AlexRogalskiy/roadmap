@@ -122,7 +122,11 @@
         <commons-compress.version>1.20</commons-compress.version>
         <commons-collections.version>4.4</commons-collections.version>
         <commons-validator.version>1.7</commons-validator.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+
         <guava.version>29.0-jre</guava.version>
+        <hibernate-validator.version>7.0.0.Alpha6</hibernate-validator.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
 
         <jacoco-check.skip>false</jacoco-check.skip>
         <jacoco-rule.line.length>100</jacoco-rule.line.length>
@@ -218,6 +222,34 @@
             <version>${guava.version}</version>
         </dependency>
 
+        <!-- Hibernate library dependencies -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+
+        <!-- Hibernate validator test library dependencies -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-test-utils</artifactId>
+            <version>${hibernate-validator.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Validation library dependencies -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- Throwing functions library dependencies -->
         <dependency>
             <groupId>com.pivovarit</groupId>
@@ -240,6 +272,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
             <version>${commons-collections.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons-beanutils.version}</version>
         </dependency>
 
         <!-- Lombok library dependencies -->
@@ -805,6 +842,7 @@
                 <surefire.commands>
                     -Duser.language=en
                     -Duser.country=GB
+                    -Duser.timezone=UTC
                     --add-exports java.base/jdk.internal.ref=ALL-UNNAMED
                     --illegal-access=permit
                     --enable-preview

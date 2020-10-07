@@ -1,7 +1,7 @@
 package com.sensiblemetrics.api.roadmap.router.service.repository.impl;
 
 import com.sensiblemetrics.api.roadmap.commons.executor.QueueingThreadPoolExecutor;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModelEntity;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.BaseModelRepository;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.stream.Stream;
  * @param <ID> type of {@link Serializable} entity identifier {@link Serializable}
  */
 @RequiredArgsConstructor
-public abstract class BaseModelRepositoryImpl<E extends BaseModel<ID>, ID extends Serializable> implements BaseModelRepository<E, ID> {
+public abstract class BaseModelRepositoryImpl<E extends BaseModelEntity<ID>, ID extends Serializable> implements BaseModelRepository<E, ID> {
     protected final QueueingThreadPoolExecutor queueingThreadPoolExecutor;
     protected final DataStorage storage;
 

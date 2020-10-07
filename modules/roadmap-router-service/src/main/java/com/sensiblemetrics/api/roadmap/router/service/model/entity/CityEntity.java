@@ -4,7 +4,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
@@ -17,7 +19,7 @@ import java.util.UUID;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class City extends BaseModel<UUID> {
+public class CityEntity extends BaseModelEntity<UUID> {
     /**
      * Default explicit serialVersionUID for interoperability
      */
@@ -26,35 +28,37 @@ public class City extends BaseModel<UUID> {
     /**
      * City unique name
      */
-    @NotBlank
+    @NotBlank(message = "{model.entity.city.name.notBlank}")
     private String name;
 
     /**
      * City coordinate
      */
-    private Coordinate<BigDecimal> coordinate;
+    @Valid
+    private CoordinateEntity<@NotNull BigDecimal> coordinate;
 
     /**
      * Roads connected with the city
      */
-    private List<Road> roadList;
+    @Valid
+    private List<@NotNull RoadEntity> roadList;
 
     /**
-     * Adds new {@link Road} to city
+     * Adds new {@link RoadEntity} to city
      *
-     * @param road initial input {@link Road} to add
+     * @param road initial input {@link RoadEntity} to add
      */
-    public void addRoad(final Road road) {
+    public void addRoad(final RoadEntity road) {
         Optional.ofNullable(road)
             .ifPresent(this.roadList::add);
     }
 
     /**
-     * Adds collection of {@link Road}s to city
+     * Adds collection of {@link RoadEntity}s to city
      *
-     * @param roads initial input {@link Collection} of {@link Road}s to add
+     * @param roads initial input {@link Collection} of {@link RoadEntity}s to add
      */
-    public void addRoads(final Collection<Road> roads) {
+    public void addRoads(final Collection<RoadEntity> roads) {
         Optional.ofNullable(roads)
             .ifPresent(v -> v.forEach(this::addRoad));
     }

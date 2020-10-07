@@ -2,9 +2,9 @@ package com.sensiblemetrics.api.roadmap.commons.utils;
 
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.Validate;
 
 import java.util.*;
-import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -16,21 +16,6 @@ import static org.apache.commons.lang3.ArrayUtils.EMPTY_OBJECT_ARRAY;
 public class ServiceUtils {
 
     /**
-     * Default {@link BiConsumer} completable action operator
-     */
-    public static final BiConsumer<? super Object, ? super Throwable> DEFAULT_COMPLETABLE_LOG_ACTION = (response, error) -> {
-        try {
-            if (Objects.nonNull(error)) {
-                log.info("Canceled completable future request [response={}, error={}]", response, error.getMessage());
-            } else {
-                log.info("Received completable future response [from={}]", response);
-            }
-        } catch (RuntimeException e) {
-            log.error("ERROR: cannot process completable future request callback", e);
-        }
-    };
-
-    /**
      * Rethrow input {@link Throwable}
      *
      * @param <E>       type of throwable item
@@ -39,7 +24,7 @@ public class ServiceUtils {
      */
     @SuppressWarnings("unchecked")
     public static <E extends Throwable> void doThrow(final Throwable throwable) throws E {
-        Objects.requireNonNull(throwable, "Throwable should not be null");
+        Validate.notNull(throwable, "Throwable should not be null");
         throw (E) throwable;
     }
 
@@ -79,7 +64,7 @@ public class ServiceUtils {
      */
     public static <T> Stream<T> streamOf(final Iterator<T> iterator,
                                          final boolean parallel) {
-        Objects.requireNonNull(iterator, "Iterator should not be null");
+        Validate.notNull(iterator, "Iterator should not be null");
         return StreamSupport.stream(Spliterators.spliteratorUnknownSize(iterator, 0), parallel);
     }
 

@@ -1,19 +1,19 @@
 package com.sensiblemetrics.api.roadmap.router.service.service.interfaces;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.City;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.CityEntity;
 
 import java.util.Optional;
 import java.util.UUID;
 
 /**
- * {@link City} base model service
+ * {@link CityEntity} base model service
  */
-public interface CityService extends BaseModelService<City, UUID> {
+public interface CityService extends BaseModelService<CityEntity, UUID> {
     /**
-     * Returns {@link City} by input {@link String} name
+     * Returns {@link CityEntity} by input {@link String} name
      *
      * @param name initial input {@link String} city name to fetch by
-     * @return {@link City} instance
+     * @return {@link CityEntity} instance
      */
-    Optional<City> findCityByName(final String name);
+    Optional<CityEntity> findCityByName(final String name);
 }

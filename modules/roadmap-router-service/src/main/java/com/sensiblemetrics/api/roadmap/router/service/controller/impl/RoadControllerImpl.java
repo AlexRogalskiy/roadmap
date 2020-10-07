@@ -2,8 +2,8 @@ package com.sensiblemetrics.api.roadmap.router.service.controller.impl;
 
 import com.google.common.collect.Iterables;
 import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.RoadController;
-import com.sensiblemetrics.api.roadmap.router.service.model.dto.Response;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.Road;
+import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.RoadEntity;
 import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,19 +14,19 @@ import java.util.UUID;
 import static com.sensiblemetrics.api.roadmap.commons.utils.ServiceUtils.not;
 
 /**
- * {@link Road} base model controller implementation
+ * {@link RoadEntity} base model controller implementation
  */
 @Slf4j
 @RequiredArgsConstructor
-public class RoadControllerImpl extends BaseModelControllerImpl<Road, UUID> implements RoadController {
+public class RoadControllerImpl extends BaseModelControllerImpl<RoadEntity, UUID> implements RoadController {
 
     private final RoadService roadService;
 
     @Override
-    public Response<Road> add(final Road road) {
+    public Response<RoadEntity> add(final RoadEntity road) {
         log.info("Storing new road: {}", road);
         try {
-            final Road savedRoad = this.roadService.save(road);
+            final RoadEntity savedRoad = this.roadService.save(road);
             return Response.ok(savedRoad);
         } catch (Exception e) {
             return Response.failed(e.getMessage());
@@ -34,10 +34,10 @@ public class RoadControllerImpl extends BaseModelControllerImpl<Road, UUID> impl
     }
 
     @Override
-    public Response<Road> remove(final Road road) {
+    public Response<RoadEntity> remove(final RoadEntity road) {
         log.info("Removing road: {}", road);
         try {
-            final Road deletedRoad = this.roadService.delete(road);
+            final RoadEntity deletedRoad = this.roadService.delete(road);
             return Response.ok(deletedRoad);
         } catch (Exception e) {
             return Response.failed(e.getMessage());
@@ -45,7 +45,7 @@ public class RoadControllerImpl extends BaseModelControllerImpl<Road, UUID> impl
     }
 
     @Override
-    public Response<Iterable<Road>> findRoadsByCityName(final String name) {
+    public Response<Iterable<RoadEntity>> findRoadsByCityName(final String name) {
         log.info("Finding roads by name: {}", name);
         try {
             return Optional.of(this.roadService.findRoadsByCityName(name))

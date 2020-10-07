@@ -1,7 +1,7 @@
 package com.sensiblemetrics.api.roadmap.router.service.repository.impl;
 
 import com.sensiblemetrics.api.roadmap.commons.executor.QueueingThreadPoolExecutor;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.Road;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.RoadEntity;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.RoadRepository;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
 
@@ -12,9 +12,9 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * {@link Road} repository implementation
+ * {@link RoadEntity} repository implementation
  */
-public class RoadRepositoryImpl extends BaseModelRepositoryImpl<Road, UUID> implements RoadRepository {
+public class RoadRepositoryImpl extends BaseModelRepositoryImpl<RoadEntity, UUID> implements RoadRepository {
 
     public RoadRepositoryImpl(final QueueingThreadPoolExecutor queueingThreadPoolExecutor,
                               final DataStorage storage) {
@@ -22,11 +22,11 @@ public class RoadRepositoryImpl extends BaseModelRepositoryImpl<Road, UUID> impl
     }
 
     @Override
-    public CompletableFuture<Iterable<Road>> findRoadsByCityName(final String name) {
+    public CompletableFuture<Iterable<RoadEntity>> findRoadsByCityName(final String name) {
         return CompletableFuture.supplyAsync(() -> this.getRoadsByCity(name), this.queueingThreadPoolExecutor);
     }
 
-    private List<Road> getRoadsByCity(final String name) {
+    private List<RoadEntity> getRoadsByCity(final String name) {
         return this.storage.getData().entrySet()
             .stream()
             .filter(e -> e.getKey().getName().equals(name))

@@ -1,6 +1,6 @@
 package com.sensiblemetrics.api.roadmap.router.service.repository.interfaces;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModelEntity;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -13,7 +13,7 @@ import java.util.stream.Stream;
  * @param <E>  type of {@link Serializable} entity
  * @param <ID> type of {@link Serializable} entity identifier {@link Serializable}
  */
-public interface BaseModelRepository<E extends BaseModel<ID>, ID extends Serializable> {
+public interface BaseModelRepository<E extends BaseModelEntity<ID>, ID extends Serializable> {
     /**
      * Returns collection of {@link Serializable} models as {@link Stream} by query
      *

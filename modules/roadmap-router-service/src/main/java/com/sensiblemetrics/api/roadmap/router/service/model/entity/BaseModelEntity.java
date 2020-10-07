@@ -11,10 +11,10 @@ import java.io.Serializable;
  * @param <ID> type of configurable identifier
  */
 @Data
-public abstract class BaseModel<ID extends Serializable> implements Serializable {
+public abstract class BaseModelEntity<ID extends Serializable> implements Serializable {
     /**
      * Model unique identifier
      */
-    @NotNull
+    @NotNull(message = "{model.entity.base.id.notNull}")
     private ID id;
 }

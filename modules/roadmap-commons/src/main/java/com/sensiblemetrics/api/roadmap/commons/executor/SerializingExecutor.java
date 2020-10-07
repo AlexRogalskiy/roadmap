@@ -1,9 +1,9 @@
 package com.sensiblemetrics.api.roadmap.commons.executor;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.Validate;
 
 import javax.annotation.Nullable;
-import java.util.Objects;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
@@ -53,7 +53,7 @@ public final class SerializingExecutor implements Executor, Runnable {
      * @param executor Executor in which tasks should be run. Must not be null.
      */
     public SerializingExecutor(final Executor executor) {
-        Objects.requireNonNull(executor, "Executor should not be null");
+        Validate.notNull(executor, "Executor should not be null");
         this.executor = executor;
     }
 

@@ -1,8 +1,10 @@
-package com.sensiblemetrics.api.roadmap.router.service.model.dto;
+package com.sensiblemetrics.api.roadmap.router.service.model.domain;
 
 import com.sensiblemetrics.api.roadmap.router.service.enumeration.StatusType;
 import lombok.Builder;
+import lombok.Data;
 
+@Data
 @Builder
 public class Response<T> {
     private final StatusType status;

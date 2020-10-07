@@ -1,6 +1,6 @@
 package com.sensiblemetrics.api.roadmap.router.service.service.interfaces;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModelEntity;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -11,7 +11,7 @@ import java.util.Optional;
  * @param <E>  type of configuration model
  * @param <ID> type of configuration model {@link Serializable} identifier
  */
-public interface BaseModelService<E extends BaseModel<ID>, ID extends Serializable> {
+public interface BaseModelService<E extends BaseModelEntity<ID>, ID extends Serializable> {
     /**
      * Returns {@link Iterable} collection of {@code E} entities by entities {@code ID} identifiers
      *

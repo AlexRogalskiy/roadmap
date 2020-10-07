@@ -4,7 +4,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.util.UUID;
 
@@ -14,7 +16,7 @@ import java.util.UUID;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Road extends BaseModel<UUID> {
+public class RoadEntity extends BaseModelEntity<UUID> {
     /**
      * Default explicit serialVersionUID for interoperability
      */
@@ -23,17 +25,19 @@ public class Road extends BaseModel<UUID> {
     /**
      * Road unique name
      */
-    @NotBlank
+    @NotBlank(message = "{model.entity.road.name.notBlank}")
     private String name;
 
     /**
      * Road length
      */
-    @Positive
+    @Positive(message = "{model.entity.road.length.positive}")
     private long length;
 
     /**
      * City coordinate
      */
-    private Coordinate<City> coordinate;
+    @Valid
+    @NotNull(message = "{model.entity.road.cities.notNull}")
+    private CoordinateEntity<@NotNull CityEntity> coordinate;
 }

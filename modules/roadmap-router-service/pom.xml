@@ -20,8 +20,8 @@
     <properties>
         <sensiblemetrics.version>0.1.0-SNAPSHOT</sensiblemetrics.version>
 
+        <httpclient.version>4.5.10</httpclient.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
-        <args4j.version>2.33</args4j.version>
     </properties>
 
     <dependencies>
@@ -33,18 +33,17 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+
         <!-- Validation library dependencies -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>${validation-api.version}</version>
-        </dependency>
-
-        <!-- Command-line arguments library dependencies -->
-        <dependency>
-            <groupId>args4j</groupId>
-            <artifactId>args4j</artifactId>
-            <version>${args4j.version}</version>
         </dependency>
 
         <!-- SensibleMetrics test library dependencies -->

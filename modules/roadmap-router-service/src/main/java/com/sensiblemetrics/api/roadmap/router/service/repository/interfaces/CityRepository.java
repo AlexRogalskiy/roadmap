@@ -1,20 +1,20 @@
 package com.sensiblemetrics.api.roadmap.router.service.repository.interfaces;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.City;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.CityEntity;
 
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * {@link City} base model repository
+ * {@link CityEntity} base model repository
  */
-public interface CityRepository extends BaseModelRepository<City, UUID> {
+public interface CityRepository extends BaseModelRepository<CityEntity, UUID> {
     /**
-     * Returns {@link CompletableFuture} of {@link City} by input {@link String} name
+     * Returns {@link CompletableFuture} of {@link CityEntity} by input {@link String} name
      *
      * @param name initial input {@link String} city name to fetch by
-     * @return {@link City} instance
+     * @return {@link CityEntity} instance
      */
-    CompletableFuture<Optional<City>> findCityByName(final String name);
+    CompletableFuture<Optional<CityEntity>> findCityByName(final String name);
 }

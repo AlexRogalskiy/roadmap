@@ -2,7 +2,7 @@ package com.sensiblemetrics.api.roadmap.router.service.service.impl;
 
 import com.sensiblemetrics.api.roadmap.commons.exception.InvalidParameterException;
 import com.sensiblemetrics.api.roadmap.commons.exception.ResourceNotFoundException;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModelEntity;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.BaseModelRepository;
 import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.BaseModelService;
 import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RepositoryAware;
@@ -19,7 +19,7 @@ import java.util.function.Predicate;
  * @param <ID> type of configuration model {@link Serializable} identifier
  */
 @Slf4j
-public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends Serializable> implements BaseModelService<E, ID>, RepositoryAware<E, ID> {
+public abstract class BaseModelServiceImpl<E extends BaseModelEntity<ID>, ID extends Serializable> implements BaseModelService<E, ID>, RepositoryAware<E, ID> {
     /**
      * Returns {@link Iterable} collection of {@code E} entities by entities {@code ID} identifiers
      *
@@ -31,7 +31,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
         log.info("Fetching all target records by IDs: {}", target);
         return Optional.ofNullable(target)
             .map(this.getRepository()::findAllById)
-            .orElseThrow(() -> ResourceNotFoundException.throwError(String.format("Not found: {%s}", target)));
+            .orElseThrow(() -> new ResourceNotFoundException(String.format("Not found: {%s}", target)));
     }
 
     /**
@@ -58,7 +58,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
         log.info("Saving target record: {}", target);
         return Optional.ofNullable(target)
             .map(this.getRepository()::save)
-            .orElseThrow(() -> InvalidParameterException.throwError(String.format("Invalid parameter: {%s}", target)));
+            .orElseThrow(() -> new InvalidParameterException(String.format("Invalid parameter: {%s}", target)));
     }
 
     /**
@@ -79,7 +79,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
             .filter(predicate)
             //.map(value -> copyNonNullProperties(target, value))
             .map(this::save)
-            .orElseThrow(() -> ResourceNotFoundException.throwError(String.format("Resource not found: {%s}", target)));
+            .orElseThrow(() -> new ResourceNotFoundException(String.format("Resource not found: {%s}", target)));
     }
 
     /**
@@ -93,7 +93,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
         log.info("Saving target records: {}", target);
         return Optional.ofNullable(target)
             .map(this.getRepository()::saveAll)
-            .orElseThrow(() -> InvalidParameterException.throwError(String.format("Invalid parameter: {%s}", target)));
+            .orElseThrow(() -> new InvalidParameterException(String.format("Invalid parameter: {%s}", target)));
     }
 
     /**
@@ -107,7 +107,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
         log.info("Checking existence of target record by ID: {}", id);
         return Optional.ofNullable(id)
             .map(this.getRepository()::existsById)
-            .orElseThrow(() -> ResourceNotFoundException.throwError(String.format("Resource not found by ID: {%s}", id)));
+            .orElseThrow(() -> new ResourceNotFoundException(String.format("Resource not found by ID: {%s}", id)));
     }
 
     /**
@@ -123,7 +123,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
                 this.getRepository().delete(value);
                 return value;
             })
-            .orElseThrow(() -> InvalidParameterException.throwError(String.format("Invalid parameter: {%s}", target)));
+            .orElseThrow(() -> new InvalidParameterException(String.format("Invalid parameter: {%s}", target)));
     }
 
     /**
@@ -137,7 +137,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
         log.info("Removing target record by ID: {}", id);
         return this.findById(id)
             .map(this::delete)
-            .orElseThrow(() -> ResourceNotFoundException.throwError(String.format("Resource not found by ID: {%s}", id)));
+            .orElseThrow(() -> new ResourceNotFoundException(String.format("Resource not found by ID: {%s}", id)));
     }
 
     /**
@@ -154,7 +154,7 @@ public abstract class BaseModelServiceImpl<E extends BaseModel<ID>, ID extends S
                 this.getRepository().deleteAll(value);
                 return value;
             })
-            .orElseThrow(() -> InvalidParameterException.throwError(String.format("Invalid parameter: {%s}", target)));
+            .orElseThrow(() -> new InvalidParameterException(String.format("Invalid parameter: {%s}", target)));
     }
 
     @Override

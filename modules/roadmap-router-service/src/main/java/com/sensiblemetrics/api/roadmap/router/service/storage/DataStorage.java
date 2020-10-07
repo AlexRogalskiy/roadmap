@@ -1,7 +1,7 @@
 package com.sensiblemetrics.api.roadmap.router.service.storage;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.City;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.Road;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.CityEntity;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.RoadEntity;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class DataStorage {
      */
     private static final AtomicReference<Boolean> hasLoaded = new AtomicReference<>(false);
 
-    private static Map<City, List<Road>> cityListMap;
+    private static Map<CityEntity, List<RoadEntity>> cityListMap;
 
     private DataStorage(final int initialSize) {
         if (!hasLoaded.compareAndSet(false, true)) {
@@ -30,7 +30,7 @@ public class DataStorage {
         return new DataStorage(initialSize);
     }
 
-    public Map<City, List<Road>> getData() {
+    public Map<CityEntity, List<RoadEntity>> getData() {
         return cityListMap;
     }
 }

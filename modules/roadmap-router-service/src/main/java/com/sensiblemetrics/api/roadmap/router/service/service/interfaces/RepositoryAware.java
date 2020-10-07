@@ -1,6 +1,6 @@
 package com.sensiblemetrics.api.roadmap.router.service.service.interfaces;
 
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModel;
+import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModelEntity;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.BaseModelRepository;
 
 import java.io.Serializable;
@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @param <ID> type of configuration model {@link Serializable} identifier
  */
 @FunctionalInterface
-public interface RepositoryAware<E extends BaseModel<ID>, ID extends Serializable> {
+public interface RepositoryAware<E extends BaseModelEntity<ID>, ID extends Serializable> {
     /**
      * Returns {@link BaseModelRepository}
      *

@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @param <T> type of configurable coordinate
  */
 @Data
-public class Coordinate<T> implements Serializable {
+public class CoordinateEntity<T> implements Serializable {
     /**
      * Default explicit serialVersionUID for interoperability
      */
