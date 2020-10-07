@@ -3,13 +3,13 @@ package com.sensiblemetrics.api.roadmap.router.service.model.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.RoadEntity;
+import com.googlecode.jmapper.annotations.JMap;
 import lombok.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import javax.validation.constraints.Positive;
 import java.util.UUID;
 
 @Data
@@ -19,13 +19,21 @@ import java.util.UUID;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class CityDto extends BaseModelDto<UUID> {
+public class RoadModelDto extends BaseModelDto<UUID> {
 
+    @JMap
     @JsonProperty(value = "name", required = true)
-    @NotBlank(message = "{model.dto.city.name.notBlank}")
+    @NotBlank(message = "{model.dto.road.name.notBlank}")
     private String name;
 
+    @JMap
+    @JsonProperty(value = "length", required = true)
+    @Positive(message = "{model.dto.road.length.positive}")
+    private long length;
+
+    @JMap("coordinate")
     @Valid
-    @JsonProperty(value = "roads", required = true)
-    private List<@NotNull RoadEntity> roadList;
+    @JsonProperty(value = "cities", required = true)
+    @NotNull(message = "{model.dto.road.cities.notNull}")
+    private CoordinateDto<@NotNull CityModelDto> cities;
 }

@@ -1,4 +1,4 @@
-package com.sensiblemetrics.api.roadmap.router.service.management;
+package com.sensiblemetrics.api.roadmap.router.service.mapper;
 
 /**
  * Model view declaration

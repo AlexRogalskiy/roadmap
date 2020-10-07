@@ -16,7 +16,7 @@ import java.util.UUID;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class RoadEntity extends BaseModelEntity<UUID> {
+public class RoadModelEntity extends BaseModelEntity<UUID> {
     /**
      * Default explicit serialVersionUID for interoperability
      */
@@ -39,5 +39,5 @@ public class RoadEntity extends BaseModelEntity<UUID> {
      */
     @Valid
     @NotNull(message = "{model.entity.road.cities.notNull}")
-    private CoordinateEntity<@NotNull CityEntity> coordinate;
+    private CoordinateEntity<@NotNull CityModelEntity> coordinate;
 }

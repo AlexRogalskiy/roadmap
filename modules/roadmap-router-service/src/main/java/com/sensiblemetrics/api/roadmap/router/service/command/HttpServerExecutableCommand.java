@@ -1,9 +1,9 @@
 package com.sensiblemetrics.api.roadmap.router.service.command;
 
+import com.sensiblemetrics.api.roadmap.commons.server.SimpleHttpServer;
 import com.sensiblemetrics.api.roadmap.router.service.management.ApplicationContext;
 import com.sensiblemetrics.api.roadmap.router.service.management.ConfigurationProperties;
 import com.sensiblemetrics.api.roadmap.router.service.management.EndpointRegistry;
-import com.sensiblemetrics.api.roadmap.router.service.server.SimpleHttpServer;
 
 public class HttpServerExecutableCommand implements ExecutableCommand {
     /**

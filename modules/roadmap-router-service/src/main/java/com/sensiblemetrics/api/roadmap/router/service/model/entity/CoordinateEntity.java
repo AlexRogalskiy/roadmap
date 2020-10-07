@@ -2,6 +2,7 @@ package com.sensiblemetrics.api.roadmap.router.service.model.entity;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -19,9 +20,11 @@ public class CoordinateEntity<T> implements Serializable {
     /**
      * Coordinate on X axis
      */
-    private T coordinateX;
+    @NotNull(message = "{model.entity.coordinate.position-x.notNull}")
+    private T positionX;
     /**
      * Coordinate on Y axis
      */
-    private T coordinateY;
+    @NotNull(message = "{model.entity.coordinate.position-y.notNull}")
+    private T positionY;
 }

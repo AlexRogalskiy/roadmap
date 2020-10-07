@@ -19,7 +19,7 @@ import java.util.UUID;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class CityEntity extends BaseModelEntity<UUID> {
+public class CityModelEntity extends BaseModelEntity<UUID> {
     /**
      * Default explicit serialVersionUID for interoperability
      */
@@ -41,24 +41,24 @@ public class CityEntity extends BaseModelEntity<UUID> {
      * Roads connected with the city
      */
     @Valid
-    private List<@NotNull RoadEntity> roadList;
+    private List<@NotNull RoadModelEntity> roadList;
 
     /**
-     * Adds new {@link RoadEntity} to city
+     * Adds new {@link RoadModelEntity} to city
      *
-     * @param road initial input {@link RoadEntity} to add
+     * @param road initial input {@link RoadModelEntity} to add
      */
-    public void addRoad(final RoadEntity road) {
+    public void addRoad(final RoadModelEntity road) {
         Optional.ofNullable(road)
             .ifPresent(this.roadList::add);
     }
 
     /**
-     * Adds collection of {@link RoadEntity}s to city
+     * Adds collection of {@link RoadModelEntity}s to city
      *
-     * @param roads initial input {@link Collection} of {@link RoadEntity}s to add
+     * @param roads initial input {@link Collection} of {@link RoadModelEntity}s to add
      */
-    public void addRoads(final Collection<RoadEntity> roads) {
+    public void addRoads(final Collection<RoadModelEntity> roads) {
         Optional.ofNullable(roads)
             .ifPresent(v -> v.forEach(this::addRoad));
     }

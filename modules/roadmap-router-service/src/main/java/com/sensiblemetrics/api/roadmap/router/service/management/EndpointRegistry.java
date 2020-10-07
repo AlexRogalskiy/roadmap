@@ -29,7 +29,8 @@ public class EndpointRegistry {
      *                       with corresponding {@link HttpHandler}s
      */
     public EndpointRegistry(final Map<String, HttpHandler> httpHandlerMap) {
-        Validate.notNull(httpHandlerMap, "Http Handler map should not be null");
+        Validate.notNull(httpHandlerMap, "Http handler mapping collection should not be null");
+
         this.httpHandlerMap = new ConcurrentHashMap<>(httpHandlerMap);
     }
 
@@ -59,10 +60,10 @@ public class EndpointRegistry {
      */
     public void register(final String urlMapping,
                          final HttpHandler httpHandler) {
-        Validate.notBlank(urlMapping, "URL mapping should not be blank");
-        Validate.notNull(httpHandler, "HTTP handler should not be null");
+        Validate.notBlank(urlMapping, "Url mapping should not be blank");
+        Validate.notNull(httpHandler, "Http handler should not be null");
 
-        log.info("Registering http handler on context path: {}", urlMapping);
+        log.info("Registering new http handler on context path: {}", urlMapping);
         this.httpHandlerMap.put(urlMapping, httpHandler);
     }
 }

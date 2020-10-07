@@ -22,6 +22,7 @@
 
         <httpclient.version>4.5.10</httpclient.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
+        <jmapper.version>1.6.0.1</jmapper.version>
     </properties>
 
     <dependencies>
@@ -33,10 +34,18 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- HttpClient library dependencies -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>${httpclient.version}</version>
+        </dependency>
+
+        <!-- JMapper library dependencies -->
+        <dependency>
+            <groupId>com.googlecode.jmapper-framework</groupId>
+            <artifactId>jmapper-core</artifactId>
+            <version>${jmapper.version}</version>
         </dependency>
 
         <!-- Validation library dependencies -->
