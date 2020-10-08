@@ -127,6 +127,7 @@
 
         <guava.version>29.0-jre</guava.version>
         <httpclient.version>4.5.10</httpclient.version>
+        <undertow.version>2.2.0.Final</undertow.version>
         <hibernate-validator.version>7.0.0.Alpha6</hibernate-validator.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
 
@@ -240,6 +241,13 @@
                     <artifactId>commons-codec</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- Undertow library dependencies -->
+        <dependency>
+            <groupId>io.undertow</groupId>
+            <artifactId>undertow-core</artifactId>
+            <version>${undertow.version}</version>
         </dependency>
 
         <!-- Hibernate library dependencies -->

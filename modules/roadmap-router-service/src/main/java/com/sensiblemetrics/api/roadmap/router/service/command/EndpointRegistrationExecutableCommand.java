@@ -1,6 +1,5 @@
 package com.sensiblemetrics.api.roadmap.router.service.command;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sensiblemetrics.api.roadmap.commons.enumeration.HttpMethod;
 import com.sensiblemetrics.api.roadmap.commons.helper.DelegatedObjectMapper;
 import com.sensiblemetrics.api.roadmap.router.service.configuration.RouterConfiguration;
@@ -23,7 +22,7 @@ public class EndpointRegistrationExecutableCommand implements ExecutableCommand 
         final EndpointRegistry registry = context.getRegistry();
         final RouterConfiguration routerConfiguration = context.getRouterConfiguration();
 
-        final DelegatedObjectMapper mapper = new DelegatedObjectMapper(new ObjectMapper());
+        final DelegatedObjectMapper mapper = new DelegatedObjectMapper();
         final CityController cityController = routerConfiguration.getCityController();
         final RoadController roadController = routerConfiguration.getRoadController();
 

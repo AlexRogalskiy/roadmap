@@ -55,7 +55,7 @@ public class EndpointRegistry {
     /**
      * Adds input {@link HttpHandler} by provided {@link String} url mapping
      *
-     * @param urlMapping  initial input {@link String} url to map by
+     * @param urlMapping  initial input {@link String} url mapping
      * @param httpHandler initial input {@link HttpHandler} instance
      */
     public void register(final String urlMapping,

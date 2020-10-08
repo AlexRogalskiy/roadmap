@@ -70,4 +70,25 @@ public class RoadControllerImpl extends BaseModelControllerImpl<RoadModelDto, UU
             return Response.failed(e.getMessage());
         }
     }
+
+    /**
+     * Returns {@link Response} with {@link RoadModelDto} by input {@link String} road identifier
+     *
+     * @param id initial input {@link String} road id to remove by
+     * @return {@link Response} with {@link RoadModelDto} body
+     */
+    @Override
+    public Response<RoadModelDto> removeById(final String id) {
+        log.info("Removing road model by id: {}", id);
+        try {
+            return Optional.ofNullable(id)
+                .map(UUID::fromString)
+                .map(this.roadService::deleteById)
+                .map(this.roadDtoToEntityMapper::getDestination)
+                .map(Response::ok)
+                .orElseGet(() -> Response.notFound(id));
+        } catch (Exception e) {
+            return Response.failed(e.getMessage());
+        }
+    }
 }

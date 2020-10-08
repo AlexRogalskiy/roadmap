@@ -17,4 +17,12 @@ public interface RoadController extends BaseModelController<RoadModelDto, UUID> 
      * @return {@link Response} with {@link RoadModelDto}s body
      */
     Response<List<RoadModelDto>> findRoadsByCityName(final String name);
+
+    /**
+     * Returns {@link Response} with {@link RoadModelDto} by input {@link String} road identifier
+     *
+     * @param id initial input {@link String} road id to remove by
+     * @return {@link Response} with {@link RoadModelDto} body
+     */
+    Response<RoadModelDto> removeById(final String id);
 }

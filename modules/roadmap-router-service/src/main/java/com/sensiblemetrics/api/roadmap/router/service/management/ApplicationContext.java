@@ -3,12 +3,13 @@ package com.sensiblemetrics.api.roadmap.router.service.management;
 import com.sensiblemetrics.api.roadmap.commons.executor.QueueingThreadPoolExecutor;
 import com.sensiblemetrics.api.roadmap.router.service.configuration.RouterConfiguration;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class ApplicationContext {
 
     private final EndpointRegistry registry;
+    private final EndpointRoutingRegistry endpointRoutingRegistry;
     private final ConfigurationProperties configurationProperties;
     private final RouterConfiguration routerConfiguration;
 
@@ -17,6 +18,7 @@ public class ApplicationContext {
      */
     private ApplicationContext() {
         this.registry = new EndpointRegistry();
+        this.endpointRoutingRegistry = new EndpointRoutingRegistry();
         this.configurationProperties = ConfigurationProperties.getInstance();
 
         final QueueingThreadPoolExecutor executor = QueueingThreadPoolExecutor.createInstance(

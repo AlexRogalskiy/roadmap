@@ -36,6 +36,13 @@ public final class DelegatedObjectMapper {
 
     /**
      * Default delegated {@link ObjectMapper} constructor
+     */
+    public DelegatedObjectMapper() {
+        this(new ObjectMapper());
+    }
+
+    /**
+     * Default delegated {@link ObjectMapper} constructor
      *
      * @param objectMapper - initial input {@link ObjectMapper} to operate by
      */
