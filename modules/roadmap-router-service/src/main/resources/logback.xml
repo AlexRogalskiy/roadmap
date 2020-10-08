@@ -17,6 +17,11 @@
         <resetJUL>true</resetJUL>
     </contextListener>
 
+    <turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
+        <Marker>PROFILER</Marker>
+        <OnMatch>NEUTRAL</OnMatch>
+    </turboFilter>
+
     <!-- Console appender configuration -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
