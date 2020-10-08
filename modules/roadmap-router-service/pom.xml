@@ -22,7 +22,7 @@
 
         <httpclient.version>4.5.10</httpclient.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
-        <jmapper.version>1.6.0.1</jmapper.version>
+        <jmapper.version>1.6.1.CR2</jmapper.version>
     </properties>
 
     <dependencies>
