@@ -9,10 +9,10 @@ import com.sensiblemetrics.api.roadmap.router.service.repository.impl.CityReposi
 import com.sensiblemetrics.api.roadmap.router.service.repository.impl.RoadRepositoryImpl;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.CityRepository;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.RoadRepository;
-import com.sensiblemetrics.api.roadmap.router.service.service.impl.CityServiceImpl;
-import com.sensiblemetrics.api.roadmap.router.service.service.impl.RoadServiceImpl;
-import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.CityService;
-import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadService;
+import com.sensiblemetrics.api.roadmap.router.service.service.impl.CityModelServiceImpl;
+import com.sensiblemetrics.api.roadmap.router.service.service.impl.RoadModelServiceImpl;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.CityModelService;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadModelService;
 import com.sensiblemetrics.api.roadmap.router.service.storage.DataStorage;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -32,8 +32,8 @@ public class RouterConfiguration {
     private final CityRepository cityRepository;
     private final RoadRepository roadRepository;
 
-    private final CityService cityService;
-    private final RoadService roadService;
+    private final CityModelService cityService;
+    private final RoadModelService roadService;
 
     private final CityController cityController;
     private final RoadController roadController;
@@ -50,20 +50,20 @@ public class RouterConfiguration {
         this.roadController = this.getRoadController(this.roadService);
     }
 
-    public CityController getCityController(final CityService cityService) {
+    public CityController getCityController(final CityModelService cityService) {
         return new CityControllerImpl(cityService);
     }
 
-    public RoadController getRoadController(final RoadService roadService) {
+    public RoadController getRoadController(final RoadModelService roadService) {
         return new RoadControllerImpl(roadService);
     }
 
-    public CityService getCityService(final CityRepository cityRepository) {
-        return new CityServiceImpl(cityRepository);
+    public CityModelService getCityService(final CityRepository cityRepository) {
+        return new CityModelServiceImpl(cityRepository);
     }
 
-    public RoadService getRoadService(final RoadRepository roadRepository) {
-        return new RoadServiceImpl(roadRepository);
+    public RoadModelService getRoadService(final RoadRepository roadRepository) {
+        return new RoadModelServiceImpl(roadRepository);
     }
 
     public CityRepository getCityRepository(final QueueingThreadPoolExecutor executor,

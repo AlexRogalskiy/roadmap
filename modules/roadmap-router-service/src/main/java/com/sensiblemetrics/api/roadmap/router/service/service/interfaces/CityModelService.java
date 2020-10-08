@@ -8,7 +8,7 @@ import java.util.UUID;
 /**
  * {@link CityModelEntity} base model service
  */
-public interface CityService extends BaseModelService<CityModelEntity, UUID> {
+public interface CityModelService extends BaseModelService<CityModelEntity, UUID> {
     /**
      * Returns {@link CityModelEntity} by input {@link String} name
      *

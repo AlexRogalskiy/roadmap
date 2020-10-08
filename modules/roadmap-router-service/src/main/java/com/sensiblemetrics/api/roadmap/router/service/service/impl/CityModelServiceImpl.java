@@ -2,7 +2,7 @@ package com.sensiblemetrics.api.roadmap.router.service.service.impl;
 
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.CityModelEntity;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.CityRepository;
-import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.CityService;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.CityModelService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
@@ -14,7 +14,7 @@ import static com.sensiblemetrics.api.roadmap.commons.utils.FutureUtils.DEFAULT_
  * {@link CityModelEntity} base model service implementation
  */
 @RequiredArgsConstructor
-public class CityServiceImpl extends BaseModelServiceImpl<CityModelEntity, UUID> implements CityService {
+public class CityModelServiceImpl extends BaseModelServiceImpl<CityModelEntity, UUID> implements CityModelService {
 
     private final CityRepository cityRepository;
 

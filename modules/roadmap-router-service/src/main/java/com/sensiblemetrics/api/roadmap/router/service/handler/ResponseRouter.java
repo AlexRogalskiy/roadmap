@@ -4,8 +4,8 @@ import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.City
 import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.RoadController;
 import com.sensiblemetrics.api.roadmap.router.service.mapper.DelegatedObjectMapper;
 import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.CityModelEntity;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.RoadModelEntity;
+import com.sensiblemetrics.api.roadmap.router.service.model.dto.CityModelDto;
+import com.sensiblemetrics.api.roadmap.router.service.model.dto.RoadModelDto;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import lombok.experimental.UtilityClass;
@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.compress.utils.IOUtils;
 
 import java.io.*;
+import java.util.List;
 import java.util.function.Consumer;
 
 @Slf4j
@@ -23,7 +24,7 @@ public class ResponseRouter {
                                                     final CityController cityController) {
         return httpExchange -> {
             final String name = mapper.map(httpExchange.getRequestBody(), String.class);
-            final Response<CityModelEntity> response = cityController.findCityByName(name);
+            final Response<CityModelDto> response = cityController.findCityByName(name);
             sendResponse(response.getStatus(), mapper.toString(response)).accept(httpExchange);
         };
     }
@@ -31,8 +32,8 @@ public class ResponseRouter {
     public static HttpHandler createNewCityHandler(final DelegatedObjectMapper mapper,
                                                    final CityController cityController) {
         return httpExchange -> {
-            final CityModelEntity cityModelEntity = mapper.map(httpExchange.getRequestBody(), CityModelEntity.class);
-            final Response<CityModelEntity> response = cityController.add(cityModelEntity);
+            final CityModelDto cityModelDto = mapper.map(httpExchange.getRequestBody(), CityModelDto.class);
+            final Response<CityModelDto> response = cityController.add(cityModelDto);
             sendResponse(response.getStatus(), mapper.toString(response)).accept(httpExchange);
         };
     }
@@ -40,8 +41,8 @@ public class ResponseRouter {
     public static HttpHandler createNewRoadHandler(final DelegatedObjectMapper mapper,
                                                    final RoadController roadController) {
         return httpExchange -> {
-            final RoadModelEntity roadModelEntity = mapper.map(httpExchange.getRequestBody(), RoadModelEntity.class);
-            final Response<RoadModelEntity> response = roadController.add(roadModelEntity);
+            final RoadModelDto roadModelDto = mapper.map(httpExchange.getRequestBody(), RoadModelDto.class);
+            final Response<RoadModelDto> response = roadController.add(roadModelDto);
             sendResponse(response.getStatus(), mapper.toString(response)).accept(httpExchange);
         };
     }
@@ -49,8 +50,8 @@ public class ResponseRouter {
     public static HttpHandler removeRoadHandler(final DelegatedObjectMapper mapper,
                                                 final RoadController roadController) {
         return httpExchange -> {
-            final RoadModelEntity roadModelEntity = mapper.map(httpExchange.getRequestBody(), RoadModelEntity.class);
-            final Response<RoadModelEntity> response = roadController.remove(roadModelEntity);
+            final RoadModelDto roadModelDto = mapper.map(httpExchange.getRequestBody(), RoadModelDto.class);
+            final Response<RoadModelDto> response = roadController.remove(roadModelDto);
             sendResponse(response.getStatus(), mapper.toString(response)).accept(httpExchange);
         };
     }
@@ -59,7 +60,7 @@ public class ResponseRouter {
                                                          final RoadController roadController) {
         return httpExchange -> {
             final String name = mapper.map(httpExchange.getRequestBody(), String.class);
-            final Response<Iterable<RoadModelEntity>> response = roadController.findRoadsByCityName(name);
+            final Response<List<RoadModelDto>> response = roadController.findRoadsByCityName(name);
             sendResponse(response.getStatus(), mapper.toString(response)).accept(httpExchange);
         };
     }

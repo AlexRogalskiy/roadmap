@@ -117,7 +117,7 @@ public class PropertyUtils {
      * contained in the HashMap which associates to the name key
      */
     public static String getProperty(final String propertyName) {
-        return PROPERTY_MAP.getProperty(propertyName.toUpperCase(), EMPTY);
+        return PROPERTY_MAP.getProperty(propertyName, EMPTY);
     }
 
     /**

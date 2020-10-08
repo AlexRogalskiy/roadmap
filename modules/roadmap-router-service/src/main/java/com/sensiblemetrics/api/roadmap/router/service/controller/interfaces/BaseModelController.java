@@ -1,7 +1,7 @@
 package com.sensiblemetrics.api.roadmap.router.service.controller.interfaces;
 
 import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
-import com.sensiblemetrics.api.roadmap.router.service.model.entity.BaseModelEntity;
+import com.sensiblemetrics.api.roadmap.router.service.model.dto.BaseModelDto;
 
 import java.io.Serializable;
 
@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @param <E>  type of configuration model
  * @param <ID> type of configuration model {@link Serializable} identifier
  */
-public interface BaseModelController<E extends BaseModelEntity<ID>, ID extends Serializable> {
+public interface BaseModelController<E extends BaseModelDto<ID>, ID extends Serializable> {
     /**
      * Returns {@link Response} with stored {@link E} value
      *

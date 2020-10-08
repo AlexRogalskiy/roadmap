@@ -21,8 +21,9 @@ public final class ExecutableCommandManager {
         if (!INIT.compareAndSet(false, true)) {
             throw new IllegalStateException("Executable command manager has already started");
         }
+
         log.info("Executable command manager started initialization.");
-        CommandBuilder.fromContext(ApplicationContext.create())
+        CommandBuilder.fromContext(ApplicationContext.newInstance())
             .withCommand(EndpointRegistrationExecutableCommand::new)
             .withCommand(HttpServerExecutableCommand::new)
             .execute();

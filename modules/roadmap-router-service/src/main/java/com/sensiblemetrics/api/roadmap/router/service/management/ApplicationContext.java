@@ -34,7 +34,7 @@ public class ApplicationContext {
      *
      * @return default {@link ApplicationContext}
      */
-    public static ApplicationContext create() {
+    public static ApplicationContext newInstance() {
         return new ApplicationContext();
     }
 }

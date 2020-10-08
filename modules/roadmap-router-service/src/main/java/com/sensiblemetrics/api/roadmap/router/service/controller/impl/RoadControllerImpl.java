@@ -1,55 +1,69 @@
 package com.sensiblemetrics.api.roadmap.router.service.controller.impl;
 
 import com.google.common.collect.Iterables;
+import com.googlecode.jmapper.JMapper;
 import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.RoadController;
 import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
+import com.sensiblemetrics.api.roadmap.router.service.model.dto.RoadModelDto;
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.RoadModelEntity;
-import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadService;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadModelService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import static com.sensiblemetrics.api.roadmap.commons.utils.ServiceUtils.not;
+import static com.sensiblemetrics.api.roadmap.commons.utils.ServiceUtils.streamOf;
 
 /**
- * {@link RoadModelEntity} base model controller implementation
+ * {@link RoadModelDto} base model controller implementation
  */
 @Slf4j
 @RequiredArgsConstructor
-public class RoadControllerImpl extends BaseModelControllerImpl<RoadModelEntity, UUID> implements RoadController {
+public class RoadControllerImpl extends BaseModelControllerImpl<RoadModelDto, UUID> implements RoadController {
 
-    private final RoadService roadService;
+    private final RoadModelService roadService;
+    private final JMapper<RoadModelEntity, RoadModelDto> roadEntityToDtoMapper;
+    private final JMapper<RoadModelDto, RoadModelEntity> roadDtoToEntityMapper;
+
+    public RoadControllerImpl(final RoadModelService roadService) {
+        this.roadService = roadService;
+        this.roadEntityToDtoMapper = new JMapper<>(RoadModelEntity.class, RoadModelDto.class);
+        this.roadDtoToEntityMapper = new JMapper<>(RoadModelDto.class, RoadModelEntity.class);
+    }
 
     @Override
-    public Response<RoadModelEntity> add(final RoadModelEntity road) {
-        log.info("Storing new road: {}", road);
+    public Response<RoadModelDto> add(final RoadModelDto road) {
+        log.info("Storing new road model: {}", road);
         try {
-            final RoadModelEntity savedRoad = this.roadService.save(road);
-            return Response.ok(savedRoad);
+            final RoadModelEntity savedRoad = this.roadService.save(this.roadEntityToDtoMapper.getDestination(road));
+            return Response.ok(this.roadDtoToEntityMapper.getDestination(savedRoad));
         } catch (Exception e) {
             return Response.failed(e.getMessage());
         }
     }
 
     @Override
-    public Response<RoadModelEntity> remove(final RoadModelEntity road) {
-        log.info("Removing road: {}", road);
+    public Response<RoadModelDto> remove(final RoadModelDto road) {
+        log.info("Removing road model: {}", road);
         try {
-            final RoadModelEntity deletedRoad = this.roadService.delete(road);
-            return Response.ok(deletedRoad);
+            final RoadModelEntity deletedRoad = this.roadService.delete(this.roadEntityToDtoMapper.getDestination(road));
+            return Response.ok(this.roadDtoToEntityMapper.getDestination(deletedRoad));
         } catch (Exception e) {
             return Response.failed(e.getMessage());
         }
     }
 
     @Override
-    public Response<Iterable<RoadModelEntity>> findRoadsByCityName(final String name) {
-        log.info("Finding roads by name: {}", name);
+    public Response<List<RoadModelDto>> findRoadsByCityName(final String name) {
+        log.info("Finding road models by name: {}", name);
         try {
             return Optional.of(this.roadService.findRoadsByCityName(name))
                 .filter(not(Iterables::isEmpty))
+                .map(v -> streamOf(v.iterator()).map(this.roadDtoToEntityMapper::getDestination).collect(Collectors.toList()))
                 .map(Response::ok)
                 .orElseGet(() -> Response.notFound(name));
         } catch (Exception e) {

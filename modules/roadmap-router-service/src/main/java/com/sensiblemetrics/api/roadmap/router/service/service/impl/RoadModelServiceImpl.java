@@ -2,7 +2,7 @@ package com.sensiblemetrics.api.roadmap.router.service.service.impl;
 
 import com.sensiblemetrics.api.roadmap.router.service.model.entity.RoadModelEntity;
 import com.sensiblemetrics.api.roadmap.router.service.repository.interfaces.RoadRepository;
-import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadService;
+import com.sensiblemetrics.api.roadmap.router.service.service.interfaces.RoadModelService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;
@@ -13,7 +13,7 @@ import static com.sensiblemetrics.api.roadmap.commons.utils.FutureUtils.DEFAULT_
  * {@link RoadModelEntity} base model service implementation
  */
 @RequiredArgsConstructor
-public class RoadServiceImpl extends BaseModelServiceImpl<RoadModelEntity, UUID> implements RoadService {
+public class RoadModelServiceImpl extends BaseModelServiceImpl<RoadModelEntity, UUID> implements RoadModelService {
 
     private final RoadRepository roadRepository;
 

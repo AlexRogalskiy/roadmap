@@ -7,7 +7,7 @@ import java.util.UUID;
 /**
  * {@link RoadModelEntity} base model service
  */
-public interface RoadService extends BaseModelService<RoadModelEntity, UUID> {
+public interface RoadModelService extends BaseModelService<RoadModelEntity, UUID> {
     /**
      * Returns {@link Iterable} collection of {@link RoadModelEntity}s by input {@link String} name
      *
