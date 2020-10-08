@@ -1,4 +1,4 @@
-package com.sensiblemetrics.api.roadmap.router.service.mapper;
+package com.sensiblemetrics.api.roadmap.commons.helper;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;

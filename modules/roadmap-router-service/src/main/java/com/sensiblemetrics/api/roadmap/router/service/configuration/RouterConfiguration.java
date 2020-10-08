@@ -76,15 +76,6 @@ public class RouterConfiguration {
         return new RoadRepositoryImpl(executor, dataStorage);
     }
 
-//    public DataStorage getStorage(final int size) {
-//        return DataStorage.createStorage(size);
-//    }
-//
-//    public QueueingThreadPoolExecutor getThreadPoolExecutor(final String name,
-//                                                            final int poolSize) {
-//        return QueueingThreadPoolExecutor.createInstance(name, poolSize);
-//    }
-
     /**
      * Returns lazy initialized {@link RouterConfiguration} instance
      *

@@ -1,6 +1,6 @@
 package com.sensiblemetrics.api.roadmap.router.service.repository.impl;
 
-import com.sensiblemetrics.api.roadmap.router.service.interfaces.Identifiable;
+import com.sensiblemetrics.api.roadmap.commons.interfaces.Identifiable;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

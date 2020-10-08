@@ -1,8 +1,8 @@
-package com.sensiblemetrics.api.roadmap.router.service.handler;
+package com.sensiblemetrics.api.roadmap.router.service.configuration;
 
 import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.CityController;
 import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.RoadController;
-import com.sensiblemetrics.api.roadmap.router.service.mapper.DelegatedObjectMapper;
+import com.sensiblemetrics.api.roadmap.commons.helper.DelegatedObjectMapper;
 import com.sensiblemetrics.api.roadmap.router.service.model.domain.Response;
 import com.sensiblemetrics.api.roadmap.router.service.model.dto.CityModelDto;
 import com.sensiblemetrics.api.roadmap.router.service.model.dto.RoadModelDto;

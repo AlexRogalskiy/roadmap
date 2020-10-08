@@ -1,4 +1,4 @@
-package com.sensiblemetrics.api.roadmap.router.service.interfaces;
+package com.sensiblemetrics.api.roadmap.commons.interfaces;
 
 import com.google.common.base.Objects;
 

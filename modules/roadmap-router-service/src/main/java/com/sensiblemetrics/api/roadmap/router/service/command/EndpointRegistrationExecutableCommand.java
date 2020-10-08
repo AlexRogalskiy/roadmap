@@ -6,10 +6,10 @@ import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.City
 import com.sensiblemetrics.api.roadmap.router.service.controller.interfaces.RoadController;
 import com.sensiblemetrics.api.roadmap.router.service.management.ApplicationContext;
 import com.sensiblemetrics.api.roadmap.router.service.management.EndpointRegistry;
-import com.sensiblemetrics.api.roadmap.router.service.mapper.DelegatedObjectMapper;
+import com.sensiblemetrics.api.roadmap.commons.helper.DelegatedObjectMapper;
 import com.sun.net.httpserver.HttpHandler;
 
-import static com.sensiblemetrics.api.roadmap.router.service.handler.ResponseRouter.*;
+import static com.sensiblemetrics.api.roadmap.router.service.configuration.ResponseRouter.*;
 
 public class EndpointRegistrationExecutableCommand implements ExecutableCommand {
     /**
