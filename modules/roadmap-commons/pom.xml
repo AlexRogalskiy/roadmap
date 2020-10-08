@@ -17,18 +17,6 @@
     <url>https://github.com/AlexRogalskiy/roadmap/tree/master/modules/roadmap-commons</url>
     <inceptionYear>2020</inceptionYear>
 
-    <properties>
-        <httpclient.version>4.5.10</httpclient.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient.version}</version>
-        </dependency>
-    </dependencies>
-
     <build>
         <defaultGoal>clean package</defaultGoal>
         <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>

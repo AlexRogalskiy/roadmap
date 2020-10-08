@@ -20,9 +20,9 @@
     <properties>
         <sensiblemetrics.version>0.1.0-SNAPSHOT</sensiblemetrics.version>
 
-        <httpclient.version>4.5.10</httpclient.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <jmapper.version>1.6.1.CR2</jmapper.version>
+        <xstream.version>1.4.13</xstream.version>
     </properties>
 
     <dependencies>
@@ -34,18 +34,24 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- HttpClient library dependencies -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient.version}</version>
-        </dependency>
-
         <!-- JMapper library dependencies -->
         <dependency>
             <groupId>com.googlecode.jmapper-framework</groupId>
             <artifactId>jmapper-core</artifactId>
             <version>${jmapper.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.thoughtworks.xstream</groupId>
+                    <artifactId>xstream</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- XStream library dependencies -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>${xstream.version}</version>
         </dependency>
 
         <!-- Validation library dependencies -->
