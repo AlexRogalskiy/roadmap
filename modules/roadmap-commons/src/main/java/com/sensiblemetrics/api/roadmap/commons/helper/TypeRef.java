@@ -1,6 +1,6 @@
 package com.sensiblemetrics.api.roadmap.commons.helper;
 
-import lombok.Data;
+import lombok.Getter;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.ParameterizedType;
@@ -15,7 +15,7 @@ import java.lang.reflect.Type;
  *
  * @param <T> the type of the instance to be wrapped
  */
-@Data
+@Getter
 public class TypeRef<T> implements Comparable<TypeRef<T>> {
     protected final Type type;
 

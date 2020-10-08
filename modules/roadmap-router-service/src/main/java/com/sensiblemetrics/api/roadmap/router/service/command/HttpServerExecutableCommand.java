@@ -15,7 +15,7 @@ public class HttpServerExecutableCommand implements ExecutableCommand {
     public void execute(final ApplicationContext context) {
         final ConfigurationProperties configLoader = context.getConfigurationProperties();
         final EndpointRegistry endpointRegistry = context.getRegistry();
-        final SimpleHttpServer simpleHttpServer = SimpleHttpServer.create(
+        final SimpleHttpServer simpleHttpServer = SimpleHttpServer.newInstance(
             configLoader.getServerPort(),
             endpointRegistry.getEndpointMappings()
         );

@@ -91,9 +91,9 @@ public final class SimpleHttpServer {
      * @param handlers initial input {@link Map} collection of {@link HttpHandler}s
      * @return new {@link SimpleHttpServer}
      */
-    public static SimpleHttpServer create(final int port,
-                                          final Executor executor,
-                                          final Map<String, HttpHandler> handlers) {
+    public static SimpleHttpServer newInstance(final int port,
+                                               final Executor executor,
+                                               final Map<String, HttpHandler> handlers) {
         log.info("Starting HTTP server on port: {}", port);
         return new SimpleHttpServer(port, executor, handlers);
     }
@@ -105,9 +105,9 @@ public final class SimpleHttpServer {
      * @param handlers initial input {@link Map} collection of {@link HttpHandler}s
      * @return new {@link SimpleHttpServer}
      */
-    public static SimpleHttpServer create(final int port,
-                                          final Map<String, HttpHandler> handlers) {
-        return create(port, newSingleThreadExecutor(), handlers);
+    public static SimpleHttpServer newInstance(final int port,
+                                               final Map<String, HttpHandler> handlers) {
+        return newInstance(port, newSingleThreadExecutor(), handlers);
     }
 
     /**
