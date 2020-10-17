@@ -125,7 +125,7 @@
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-codec.version>1.15</commons-codec.version>
 
-        <guava.version>29.0-jre</guava.version>
+        <guava.version>30.0-jre</guava.version>
         <httpclient.version>4.5.13</httpclient.version>
         <undertow.version>2.2.2.Final</undertow.version>
         <hibernate-validator.version>7.0.0.Alpha6</hibernate-validator.version>
