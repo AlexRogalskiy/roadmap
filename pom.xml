@@ -141,7 +141,7 @@
         <jacoco.lines.coverage.percentage.minimum>0.65</jacoco.lines.coverage.percentage.minimum>
         <jacoco.methods.coverage.percentage.minimum>0.57</jacoco.methods.coverage.percentage.minimum>
 
-        <assertj.version>3.18.1</assertj.version>
+        <assertj.version>3.19.0</assertj.version>
         <hamcrest-matchers.version>2.0.0</hamcrest-matchers.version>
         <hamcrest.version>2.2</hamcrest.version>
         <java-hamcrest.version>2.0.0.0</java-hamcrest.version>
