@@ -1,5 +1,5 @@
 # Base OS layer
-FROM openjdk:8-jdk-alpine
+FROM openjdk:17-jdk-alpine
 
 # Install curl package
 RUN apk --no-cache add curl
