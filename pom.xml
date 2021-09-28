@@ -127,7 +127,7 @@
 
         <guava.version>30.1.1-jre</guava.version>
         <httpclient.version>4.5.13</httpclient.version>
-        <undertow.version>2.2.10.Final</undertow.version>
+        <undertow.version>2.2.11.Final</undertow.version>
         <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
 
