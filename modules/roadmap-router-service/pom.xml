@@ -21,7 +21,7 @@
         <sensiblemetrics.version>0.1.0-SNAPSHOT</sensiblemetrics.version>
 
         <validation-api.version>2.0.1.Final</validation-api.version>
-        <jmapper.version>1.6.1.CR2</jmapper.version>
+        <jmapper.version>1.6.2-SNAPSHOT</jmapper.version>
         <xstream.version>1.4.18</xstream.version>
     </properties>
 
