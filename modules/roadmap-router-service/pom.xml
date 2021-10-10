@@ -22,7 +22,7 @@
 
         <validation-api.version>2.0.1.Final</validation-api.version>
         <jmapper.version>1.6.2-SNAPSHOT</jmapper.version>
-        <xstream.version>1.4.18</xstream.version>
+        <xstream.version>1.5.0-SNAPSHOT</xstream.version>
     </properties>
 
     <dependencies>
