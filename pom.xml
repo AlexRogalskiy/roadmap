@@ -114,7 +114,7 @@
         <lombok.version>1.18.22</lombok.version>
         <throwing-function.version>1.5.1</throwing-function.version>
 
-        <logback.version>1.3.0-alpha14</logback.version>
+        <logback.version>1.3.0-alpha15</logback.version>
         <logback-contrib.version>0.1.5</logback-contrib.version>
         <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
 
