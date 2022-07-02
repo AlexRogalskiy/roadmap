@@ -159,7 +159,7 @@
         <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
         <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
-        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
+        <maven-assembly-plugin.version>3.4.0</maven-assembly-plugin.version>
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <maven-versions-plugin.version>2.9.0</maven-versions-plugin.version>
         <maven-jacoco-plugin.version>0.8.9-SNAPSHOT</maven-jacoco-plugin.version>
