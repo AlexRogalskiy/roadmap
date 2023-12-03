@@ -145,8 +145,8 @@
         <hamcrest-matchers.version>2.0.0</hamcrest-matchers.version>
         <hamcrest.version>2.2</hamcrest.version>
         <java-hamcrest.version>2.0.0.0</java-hamcrest.version>
-        <junit-jupiter.version>5.10.0-SNAPSHOT</junit-jupiter.version>
-        <junit-platform.version>1.10.0-SNAPSHOT</junit-platform.version>
+        <junit-jupiter.version>5.11.0-SNAPSHOT</junit-jupiter.version>
+        <junit-platform.version>1.11.0-SNAPSHOT</junit-platform.version>
         <junit-quickcheck.version>0.9.1</junit-quickcheck.version>
 
         <mockito-helpers.version>2.0.0</mockito-helpers.version>
