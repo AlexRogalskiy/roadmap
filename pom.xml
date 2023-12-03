@@ -162,7 +162,7 @@
         <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <maven-versions-plugin.version>2.9.0</maven-versions-plugin.version>
-        <maven-jacoco-plugin.version>0.8.11-SNAPSHOT</maven-jacoco-plugin.version>
+        <maven-jacoco-plugin.version>0.8.12-SNAPSHOT</maven-jacoco-plugin.version>
         <maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
         <maven-plugin-plugin.version>3.9.0</maven-plugin-plugin.version>
         <maven-project-info-reports-plugin.version>3.4.5</maven-project-info-reports-plugin.version>
