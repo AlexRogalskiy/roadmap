@@ -112,7 +112,7 @@
         <copy-dependencies.skip>true</copy-dependencies.skip>
 
         <lombok.version>1.18.22</lombok.version>
-        <throwing-function.version>1.5.1</throwing-function.version>
+        <throwing-function.version>1.6.0</throwing-function.version>
 
         <logback.version>1.4.8</logback.version>
         <logback-contrib.version>0.1.5</logback-contrib.version>
