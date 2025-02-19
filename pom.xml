@@ -153,7 +153,7 @@
         <mockito-junit-jupiter.version>3.12.4</mockito-junit-jupiter.version>
         <mockito.version>3.12.4</mockito.version>
 
-        <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
+        <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
         <maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
         <maven-help-plugin.version>3.4.0</maven-help-plugin.version>
