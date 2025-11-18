@@ -121,7 +121,7 @@
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <commons-compress.version>1.28.0</commons-compress.version>
         <commons-collections.version>4.5.0</commons-collections.version>
-        <commons-validator.version>1.10.0</commons-validator.version>
+        <commons-validator.version>1.10.1</commons-validator.version>
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-codec.version>1.15</commons-codec.version>
 
