@@ -150,8 +150,8 @@
         <junit-quickcheck.version>0.9.1</junit-quickcheck.version>
 
         <mockito-helpers.version>2.0.0</mockito-helpers.version>
-        <mockito-junit-jupiter.version>3.12.4</mockito-junit-jupiter.version>
-        <mockito.version>3.12.4</mockito.version>
+        <mockito-junit-jupiter.version>5.21.0</mockito-junit-jupiter.version>
+        <mockito.version>5.21.0</mockito.version>
 
         <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
         <maven-dependency-plugin.version>3.9.0</maven-dependency-plugin.version>
