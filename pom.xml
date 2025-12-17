@@ -111,7 +111,7 @@
         <package-tests.skip>true</package-tests.skip>
         <copy-dependencies.skip>true</copy-dependencies.skip>
 
-        <lombok.version>1.18.22</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <throwing-function.version>1.6.1</throwing-function.version>
 
         <logback.version>1.4.8</logback.version>
